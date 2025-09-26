@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "/auth/spotify/callback", to: "sessions#spotify"
+
+  get "/auth/failure", to: redirect("/")
+  delete "/logout", to: "sessions#destroy", as: :logout
+
 
   root "pages#index"
 end
