@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def spotify
-    auth = request.env['omniauth.auth']
+    auth = request.env["omniauth.auth"]
     rspotify_user = RSpotify::User.new(auth)
 
     # Find or create local user
